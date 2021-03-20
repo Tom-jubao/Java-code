@@ -1,0 +1,32 @@
+public class BankAccount{
+   int accountNumber=0;//账号
+   String userName="";//用户名
+   double leftMoney=0;//存款余额
+   
+   public double getLeftMoney(){//查询余额
+       return leftMoney;
+   }
+   public void saveMoney(double money){//存款
+       leftMoney+=money;
+   }
+   public void getMoney(double money){//取款
+       leftMoney-=money;
+   }
+
+   public BankAccount(int number,String name,double money){
+       accountNumber=number;
+       userName=name;
+       leftMoney=money;
+   }
+
+   public static void main(String[]args){
+       BankAccount account=new BankAccount(666999,"凯撒大帝",99999);
+	   System.out.println("账号："+account.accountNumber);
+	   System.out.println("用户名："+account.userName);
+	   System.out.println("余额："+account.leftMoney);
+       account.saveMoney(123);
+       System.out.println("存入123元后，您的余额为："+account.getLeftMoney());
+       account.getMoney(456);
+       System.out.println("支出456元后，您的余额为："+account.getLeftMoney());
+   }
+}
