@@ -1,0 +1,38 @@
+public class MyRect
+{
+	int xTop, yTop;
+	int iWidth, iHeight;
+  public MyRect(int a,int b,int c, int d)
+{
+   xTop = a;
+   yTop = b;
+   iWidth = c;
+   iHeight = d;
+}
+   public void Show()
+  {
+	 System.out.println(" 矩形:位置"+xTop+","+yTop+"尺寸："+iWidth+","+iHeight);
+  }
+    public void Offset(int xOff, int yOff)
+    {
+ 	  xTop += xOff;
+	  yTop += yOff;
+    }
+
+      public void Enlarge(float fac)//用来将长宽值绽放fac倍
+     {
+         xTop*=fac;
+		 yTop*=fac;
+		 iWidth*=fac;
+		 iHeight*=fac;
+		 System.out.println(" 矩形:位置"+xTop+","+yTop+"尺寸："+iWidth+","+iHeight);
+     }
+public static void main(String[]args)
+{
+     MyRect r1=new MyRect(1,2,3,4);
+     r1.Show();
+	 r1.Offset(1,2);
+	 r1.Enlarge(2);
+}
+			
+}
