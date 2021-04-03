@@ -1,0 +1,63 @@
+ class Date
+   {
+     int year;
+	 int month;
+	 int day;
+	 Date(int y,int m,int d){
+	     year=y;
+		 month=m;
+		 day=d;
+	 }
+	 String info(){
+	     return ""+year+"/"+month+"/"+day;
+	 }
+   }
+   
+public class Student
+{
+	 String number;
+	 String name;
+	 static int count;
+	 Date birthday;
+	 float[]scores;
+   
+	 Student(String n,Date d,float[]s){
+	      count++;
+		  name=n;
+          number=String.format("20030502%02d",count);
+		  birthday=d;
+		  scores=s;
+	 }
+	 String Show(){
+	      double sum=0;
+		  for(int i=0;i<scores.length;i++){
+		      sum+=scores[i];
+		  }
+		  return "平均成绩："+sum/5;
+	 }
+	 String info(){
+	      return "学号："+number+"姓名："+name+"生日："+birthday.info();
+	 }
+	 /*boolean isExcellent(){
+	      float sum=0;
+		  for(float add:scores)
+			  sum+=add;
+		  return sum/5>=85;
+	 }*/
+	 public static void main(String[]args){
+	      Student stu[]=new Student[100];
+
+		  stu[0]=new Student("金吒",new Date(2000,1,1),new float[]{99,98,97,96,95});
+		  stu[1]=new Student("木吒",new Date(2001,5,1),new float[]{88,98,95,82,88});
+		  stu[2]=new Student("哪吒",new Date(1999,10,1),new float[]{88,98,97,95,85});
+		  for(int i=0;i<stu.length;i++){
+		      if(stu[i]==null)
+				  break;
+			  if(stu[i].birthday.year==2000){
+				  System.out.println(stu[i].info());
+			      System.out.println(stu[i].Show());
+			  }
+		  }
+	 }
+
+}
