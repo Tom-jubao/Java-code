@@ -1,0 +1,33 @@
+class Teacher{    
+    String name;
+    int work;
+    public Teacher(String name,int work){
+         this.name=name;
+	 this.work=work;
+    }
+    public boolean enough(int e){
+          if(work<e)
+	      return false;
+	 else
+	      return true;
+    }
+    public String toString(){
+         return "教师姓名："+name+"   工作量："+work;
+    }
+}
+public class Test{
+    public static void main(String[]args){
+         boolean b;
+	 Teacher t[]=new Teacher[2];
+	 t[0]=new Teacher("小王",400);
+	 t[1]=new Teacher("大王",600);
+	 for(int i=0;i<t.length;i++){
+	      if(t[i]!=null){
+	           b=t[i].enough(500);
+		   if(b==false){
+		        System.out.println(t[i]);
+		   }
+	      }
+	 }
+    }
+}
