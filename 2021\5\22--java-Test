@@ -1,0 +1,64 @@
+class Date
+{
+	int year;
+	int month;
+	int day;
+	public Date(int year,int month,int day){
+	     this.year=year;
+		 this.month=month;
+		 this.day=day;
+	}
+    public boolean before(int a,int b,int c){
+	     if(year<a){
+		      return true;
+		 }
+		 else if(year==a){
+		      if(month<b){
+			       return true;
+			  }
+			  else if(month==b){
+			       if(day<c&&day==c){
+				        return true;
+				   }
+				   else
+					   return false;
+			  }
+			  else
+				  return false;
+		 }
+		 else
+			 return false;
+	}
+	public String toString(){
+         return "出生日期："+year+month+day;
+    }
+}
+class Teacher extends Date{    
+    String name;
+    int work;
+    public Teacher(int yyear,int mmonth,int dday,String name,int work){
+         super(yyear,mmonth,dday);
+		 this.name=name;
+	     this.work=work;
+    }
+    public String toString(){
+         return "教师姓名："+name+"   工作量："+work;
+    }
+}
+public class Test{
+    public static void main(String[]args){
+         boolean b;
+	     Teacher t[]=new Teacher[3];
+	     t[0]=new Teacher(2020,1,2,"小王",400);
+	     t[1]=new Teacher(2019,12,30,"大王",600);
+		 t[2]=new Teacher(2020,1,1,"中王",500);
+	     for(int i=0;i<t.length;i++){
+	          if(t[i]!=null){
+	               b=t[i].before(2020,1,1);
+		      if(b==false){
+		           System.out.println(t[i]);
+		   }
+	      }
+	 }
+    }
+}
