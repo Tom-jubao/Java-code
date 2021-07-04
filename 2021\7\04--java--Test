@@ -1,0 +1,271 @@
+//习题二-3-（1）
+public class E
+{
+    public static void main(String[]args){
+	     for(int i=20000;i<=20322;i++){
+		      System.out.println((char)i);
+		 }
+	}
+}
+
+//习题二-3-（3）
+public class E3
+{
+    public static void main(String[]args){
+	     System.out.println("byte的取值范围："+Byte.MIN_VALUE+"至"+Byte.MAX_VALUE);
+		 System.out.println("short的取值范围："+Short.MIN_VALUE+"至"+Short.MAX_VALUE);
+		 System.out.println("int的取值范围："+Integer.MIN_VALUE+"至"+Integer.MAX_VALUE);
+		 System.out.println("long的取值范围："+Long.MIN_VALUE+"至"+Long.MAX_VALUE);
+		 System.out.println("float的取值范围："+Float.MIN_VALUE+"至"+Float.MAX_VALUE);
+		 System.out.println("double的取值范围："+Double.MIN_VALUE+"至"+Double.MAX_VALUE);
+	}
+}
+
+//习题二-3-（2）
+public class OutputData
+{
+    public static void main(String[]args){
+	     int x=234,y=432;
+		 
+		 System.out.println(x+"<"+(2*x));
+		 System.out.print("我输出结果后不回车");
+		 System.out.println("我输出结果后自动回车到下一行");
+		 System.out.println("x+y="+(x+y));
+		
+	}
+}
+
+//4、编程题1
+public class Test1 
+{
+    public static void main(String[]args){
+	     System.out.println((int)'你');
+		 System.out.println((int)'我');
+		 System.out.println((int)'他');
+	}
+}
+
+//4、编程题2
+public class Test2
+{
+    public static void main(String[]args){
+	     char start='α',end='ω';
+		 for(int i=start;i<=end;i++){
+		      System.out.println((char)i);
+		 }
+	}
+}
+
+public class Example3_5 {
+    public Example3_5() {
+    }
+
+    public static void main(String[] args) {
+        long sum = 0L;
+        long a = 8L;
+        long item = a;
+
+        for(int i = 1; i <= 12; ++i) {
+            sum += item;
+            item *= 18L;
+        }
+
+        System.out.println(sum);
+    }
+}
+
+
+public class Example3_6 {
+    public Example3_6() {
+    }
+
+    public static void main(String[] args) {
+        int i = 1;
+        int n = 20;
+        double sum = 0.0D;
+
+        for(double item = 1.0D; i <= n; item *= 1.0D / (double)i) {
+            sum += item;
+            ++i;
+        }
+
+        System.out.println(sum);
+    }
+}
+
+public class Example3_7 {
+    public Example3_7() {
+    }
+
+    public static void main(String[] args) {
+        int sum = 0;
+
+        int i;
+        for(i = 1; i <= 10; ++i) {
+            if (i % 2 != 0) {
+                sum += i;
+            }
+        }
+
+        System.out.println("1+3++5+7+9=" + sum);
+
+        for(int j = 2; j <= 100; ++j) {
+            for(i = 2; i <= j / 2 && j % i != 0; ++i) {
+            }
+
+            if (i > j / 2) {
+                System.out.println(j + "是素数");
+            }
+        }
+
+    }
+}
+
+public class Test1 {
+    public Test1() {
+    }
+
+    public static void main(String[] args) {
+        long sum = 0L;
+        long item = 1L;
+
+        for(int i = 1; i <= 10; ++i) {
+            sum += item;
+            item *= (long)i;
+        }
+
+        System.out.println("1!+2!+...+10!=" + sum);
+    }
+}
+
+public class Test2 {
+    public Test2() {
+    }
+
+    public static void main(String[] args) {
+        for(int i = 2; i <= 100; ++i) {
+            int j;
+            for(j = 2; j <= i / 2 && i % j != 0; ++j) {
+            }
+
+            if (j > i / 2) {
+                System.out.println(i + "是素数");
+            }
+        }
+
+    }
+}
+
+public class Test3 {
+    public Test3() {
+    }
+
+    public static void main(String[] args) {
+        double sum = 0.0D;
+        double item = 1.0D;
+        int n = 1;
+
+        do {
+            sum += item;
+            ++n;
+            item *= 1.0D / (double)n;
+        } while(n <= 20);
+
+        System.out.println(sum);
+
+        for(int i = 2; i <= 20; ++i) {
+            sum += item;
+            item *= 1.0D / (double)i;
+        }
+
+        System.out.println(sum);
+    }
+}
+
+public class Test4 {
+    public Test4() {
+    }
+
+    public static void main(String[] args) {
+        int i;
+        int sum;
+        int j;
+        for(i = 1; i < 1000; ++i) {
+            sum = i;
+
+            for(j = 1; j < i; ++j) {
+                if (i % j == 0) {
+                    sum -= j;
+                }
+            }
+
+            if (sum == 0) {
+                System.out.println(i + "是完数");
+            }
+        }
+
+        for(i = 1; i < 1000; ++i) {
+            sum = 0;
+
+            for(j = 1; j < i; ++j) {
+                if (i % j == 0) {
+                    sum += j;
+                }
+            }
+
+            if (sum == i) {
+                System.out.println(sum + "是完数");
+            }
+        }
+
+    }
+}
+
+
+public class Test5 {
+    public Test5() {
+    }
+
+    public static void main(String[] args) {
+        int sum = 0;
+        int item = 8;
+
+        for(int i = 0; i < 10; ++i) {
+            sum += item;
+            item *= 10;
+        }
+
+        System.out.println("8+88+888+...(10项)的和：" + sum);
+    }
+}
+
+public class Test6 {
+    public Test6() {
+    }
+
+    public static void main(String[] args) {
+        int sum = 0;
+
+        int n;
+        for(n = 1; sum < 8888; ++n) {
+            sum += n;
+        }
+
+        System.out.println(n);
+    }
+}
+
+
+public class Test_3 {
+    public Test_3() {
+    }
+
+    public static void main(String[] args) {
+        System.out.println(12.5D);
+        System.out.println(6.0D);
+        System.out.println(60053);
+        System.out.println(107);
+        System.out.println(20320);
+        System.out.println(65);
+    }
+}
